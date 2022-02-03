@@ -1,19 +1,23 @@
 import React from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
+import Border from '../../assets/svg/Line 1.svg';
 
-export default function SendingOtp() {
+export default function SendingOtp(props) {
+    const {number} = props;
     return (
         <View>
+            <Border />
             <View style={styles.container}>
                 <Text style={styles.text}>OTP sent to</Text>
                 <View style={styles.input}>
                     <Text style={styles.code}>+91</Text>
-                    <Text style={styles.number}>9999999999</Text>
+                    <Text style={styles.number}>{number}</Text>
                     <Entypo name="edit" size={18} color="#0062BD" />
                 </View>
                 <Text style={styles.textOne}>RESEND OTP</Text>
             </View>
+            <Border />
             <View style={styles.verify}>
                 <TextInput 
                     style={styles.textInput}
@@ -23,11 +27,11 @@ export default function SendingOtp() {
                 />
             </View>
             <View style={styles.button}>
-                <TouchableOpacity>
-                        <View style={styles.buttonStyle}>
-                            <Text style={styles.buttonText}>SIGN IN WITH OTP</Text>
-                        </View>
-                    </TouchableOpacity>
+                <TouchableOpacity >
+                    <View style={styles.buttonStyle}>
+                        <Text style={styles.buttonText}>SIGN IN WITH OTP</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
         
@@ -38,11 +42,6 @@ const styles = StyleSheet.create({
     container: {
         height: 140,
         backgroundColor: '#FAFAFA',
-        borderBottomWidth: 1,
-        borderBottomColor: 'black',
-        borderTopWidth: 1,
-        borderTopColor: 'black',
-        borderStyle:  'dashed'
     },
 
     text: {

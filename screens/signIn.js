@@ -3,15 +3,10 @@ import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'rea
 import Header from '../components/Header'
 import { Ionicons } from '@expo/vector-icons';
 
-
-
 export default function signIn({ navigation }) {
 
-    // const pressHandler = () => {
-    //     navigation.push('SignUp');
-    // }
     return (
-            <View>
+            <View style={styles.container}>
                 <Header />
                 <Text style={styles.title}>SIGN IN</Text>
                 <View style={styles.input}>
@@ -35,7 +30,7 @@ export default function signIn({ navigation }) {
                 <View style={styles.signUp}>
                     <Text style={styles.signUpText}>New User?</Text>
                     <View style={styles.signUpButton}>
-                        <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("SIGN UP / CREATE ACCOUNT")}>
                             <View style={styles.button}>
                                 <Text style={styles.buttonText}>SIGN UP / CREATE ACCOUNT</Text>
                             </View>
@@ -49,6 +44,12 @@ export default function signIn({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+
+    container: {
+        flex: 1,
+        backgroundColor: 'white'
+    },
+
     title: {
         fontFamily: 'NotoSans_400Regular',
         fontSize: 24,
@@ -85,14 +86,15 @@ const styles = StyleSheet.create({
     signInButton: {
         margin: 70,
         marginTop: 50,
-        paddingLeft: 10
+        paddingLeft: 2
     },
 
     signInButtonStyle: {
         borderRadius: 2,
         paddingVertical: 14,
         paddingHorizontal: 10,
-        backgroundColor: '#0062BD'
+        backgroundColor: '#0062BD',
+        width: 255
     },
 
     SignInButtonText: {

@@ -1,13 +1,46 @@
 import React from 'react'
-import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'react-native'
-import { Ionicons } from '@expo/vector-icons';
+import { useState, useEffect } from 'react'
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
+import axios from 'axios';
+
+const baseUrl = 'http://localhost:3000/number';
+
+export default function signUp({ navigation, result }) {
+
+    const [number, setNumber] = useState(null);
+    const [otp, setOtp] = useState(null);
+
+    const getOtp = async () => {
+        try {
+          const response = await axios.get(
+            `http://10.0.2.2:3000/number/1`
+          );
+          let otp = JSON.stringify(response.data.otp);
+          setOtp(otp);
+          console.log(otp);
+
+        } catch (error) {
+            alert('In error::' + error.message);
+        }
+         
+    }
+
+    // useEffect(() => {
+    //     const getOtp = async ( () => {
+    //         const response = await axios.get(`http://10.0.2.2:3000/number/1`);
+    //         const otpNumber = JSON.stringify(response.data.otp);
+    //         setOtp(otpNumber);
+    //         console.log(otp)
+    //     });
+    //    },[]);
+
+    const changeHandler = (num) => {
+        setNumber(num);
+        console.log(number)
+    }
 
 
-export default function signUp({ navigation }) {
 
-    // const pressHandler = () => {
-    //     navigation.navigate('SignUp');
-    // }
     return (
             <View style={styles.container}>
                 <View style={styles.input}>
@@ -17,21 +50,29 @@ export default function signUp({ navigation }) {
                         keyboardType='numeric'
                         placeholder='Mobile number'
                         maxLength={10}
+                        onChangeText={changeHandler}
+                        value={number}
                     />
                 </View>
+                <Text>{result}</Text>
                 <View style={styles.button}>
-                    <TouchableOpacity onPress={() => navigation.navigate("OtpVerify")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("OTP VERIFICATION", {paramKey: number}) || changeHandler() || getOtp() }>
                             <View style={styles.buttonStyle}>
                                 <Text style={styles.buttonText}>SEND OTP</Text>
                             </View>
-                        </TouchableOpacity>
+                    </TouchableOpacity>
                 </View>
             </View>
-    )
+        )
 }
 
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'white',
+        flex: 1
+    }, 
+
     input: {
         paddingTop: 40,
         display: 'flex',
@@ -58,14 +99,15 @@ const styles = StyleSheet.create({
     button: {
         margin: 70,
         marginTop: 50,
-        paddingLeft: 10
+        paddingLeft: 2,
     },
 
     buttonStyle: {
         borderRadius: 2,
         paddingVertical: 14,
         paddingHorizontal: 10,
-        backgroundColor: '#0062BD'
+        backgroundColor: '#0062BD',
+        width: 255
     },
 
     buttonText: {
@@ -77,3 +119,6 @@ const styles = StyleSheet.create({
     },
 
   })
+
+
+//   onPress={() => navigation.navigate("OTP VERIFICATION")}

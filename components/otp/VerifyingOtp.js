@@ -1,17 +1,22 @@
 import React from 'react'
 import { StyleSheet, Text, View, TextInput, Image } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
+import Border from '../../assets/svg/Line 1.svg';
+import Loading from '../../assets/svg/load.svg';
 
-export default function SendingOtp() {
+export default function SendingOtp(props) {
+    const {number} = props;
     return (
         <View>
+            <Border />
             <View style={styles.container}>
                 <Text style={styles.text}>OTP sent to</Text>
                 <View style={styles.input}>
                     <Text style={styles.code}>+91</Text>
-                    <Text style={styles.number}>9999999999</Text>
+                    <Text style={styles.number}>{number}</Text>
                 </View>
             </View>
+            <Border />
             <View style={styles.verify}>
                 <TextInput 
                     style={styles.textInput}
@@ -22,9 +27,11 @@ export default function SendingOtp() {
             </View>
             <View style={styles.processing}>
                 {/* <AntDesign name="loading1" size={24} color="black" /> */}
-                <Image
-          style={{width: 100, height: 35}}
-          source={{uri: 'https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47y98v9wmcs9lb5xiykqqllmu2mq4ve6icymt6qnzn&rid=giphy.gif&ct=g'}} />
+                {/* <Image
+                     style={{width: 100, height: 35}}
+                    source={{uri: 'https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47y98v9wmcs9lb5xiykqqllmu2mq4ve6icymt6qnzn&rid=giphy.gif&ct=g'}} 
+                /> */}
+                <Loading height={20} width={30} style={styles.loading}/>
                 <Text style={styles.textOne}>Verifying OTP...</Text>
             </View>
         </View>
@@ -36,11 +43,6 @@ const styles = StyleSheet.create({
     container: {
         height: 140,
         backgroundColor: '#FAFAFA',
-        borderBottomWidth: 1,
-        borderBottomColor: 'black',
-        borderTopWidth: 1,
-        borderTopColor: 'black',
-        borderStyle:  'dashed'
     },
 
     text: {
@@ -101,7 +103,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 20,
         color: '#000000',
-        marginLeft: 10
+        marginLeft: 100
+    },
+
+    loading: {
+        position: 'absolute',
+        top: 21,
+        left: 60,
     }
 
     

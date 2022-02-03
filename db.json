@@ -1,0 +1,32 @@
+{
+    "user":[
+        {
+            "id": "1",
+            "name": "Sanjukthaaa",
+            "phone_number": 9874563210,
+            "orderId": 3438,
+            "orderValue": 2000.00,
+            "orders": ["Blouse", "Salwar set - 1", "Saree"]
+        },
+
+        {
+            "id": "2",
+            "name": "Sanju",
+            "phone_number": 9874563850,
+            "orderId": 3439,
+            "orderValue": 7000.00,
+            "orders": ["Salwar set - 1"]
+            
+        },
+
+        {
+            "id": "3",
+            "name": "Sam",
+            "phone_number": 9874264210,
+            "orderId": 3440,
+            "orderValue": 2000.00,
+            "orders": ["Blouse", "Salwar set - 1"]
+
+        }
+    ]
+}

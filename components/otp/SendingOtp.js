@@ -1,29 +1,38 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
+import Border from '../../assets/svg/Line 1.svg';
+import Loading from '../../assets/svg/load.svg';
+import signUp from '../../screens/signUp';
 
-export default function SendingOtp() {
+export default function SendingOtp(props) {
+    const {number} = props;
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Sending OTP to</Text>
-            <View style={styles.input}>
-                <Text style={styles.code}>+91</Text>
-                <Text style={styles.number}>9999999999</Text>
-                <Entypo name="edit" size={18} color="#0062BD" />
+            <Border />
+            <View style={styles.content}>
+                <Text style={styles.text}>Sending OTP to</Text>
+                <View style={styles.input}>
+                    <Text style={styles.code}>+91</Text>
+                    <Text style={styles.number}>{number}</Text>
+                    <Loading style={styles.loading}/>
+                    {/* <Entypo name="edit" size={18} color="#0062BD" /> */}
+                </View>
             </View>
+            <Border />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: 'white',
+        flex: 1
+    },
+
+    content: {
         height: 140,
         backgroundColor: '#FAFAFA',
-        borderBottomWidth: 1,
-        borderBottomColor: 'black',
-        borderTopWidth: 1,
-        borderTopColor: 'black',
-        borderStyle:  'dashed'
     },
 
     text: {
@@ -55,5 +64,11 @@ const styles = StyleSheet.create({
         letterSpacing: 4,
         marginLeft: 20,
         marginRight: 20
-    }
+    },
+
+    loading: {
+        position: 'absolute',
+        top: 13,
+        right: 70
+    } 
 })
