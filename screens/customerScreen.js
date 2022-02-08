@@ -42,12 +42,12 @@ export default function customerScreen({ navigation }) {
     <View style={styles.container}>
         <ScrollView>
         <View style={styles.input}>
-                <TextInput 
-                    style={styles.textInput}
-                    keyboardType='default'
-                    placeholder='Search Customer...'
-                    maxLength={20}
-                />
+            <TextInput 
+                style={styles.textInput}
+                keyboardType='default'
+                placeholder='Search Customer...'
+                maxLength={20}
+            />
         </View>
         <Line style={styles.line}/>
 

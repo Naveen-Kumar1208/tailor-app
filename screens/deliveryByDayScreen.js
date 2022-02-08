@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
         borderColor: '#00C165',
         borderWidth: 1,
         borderRadius: 2.5*vh,
-        width: "24%",
+        width: "26 %",
         marginLeft: 2.5*vh,
     },
 

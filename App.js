@@ -18,6 +18,13 @@ import OrderCompleted from "./screens/orderCompletedScreen";
 import CustomerDetails from "./screens/customerDetailsScreen";
 import AddCustomer from "./screens/addCustomerScreen";
 import Login from './screens/Login';
+import HeaderScrenn from './screens/headerScreen';
+import AddCustomerScreen from "./screens/addCustomerScreen";
+import AddOrderScreen from "./screens/addOrderScreen";
+import SelectCustomerScreen from "./screens/selectCustomerScreen";
+import OrderTypeScreen from "./screens/orderTypeScreen";
+import OrderFormScreen from "./screens/orderFormScreen";
+import CameraScreen from "./screens/cameraScreen";
 
 
 import { useFonts, Pacifico_400Regular } from "@expo-google-fonts/pacifico";
@@ -38,6 +45,7 @@ import Add from './assets/svg/add.svg';
 import DetailsNavigator from "./navigation/detailsNavigation/DashboardNavigator";
 import TabNavigator from "./navigation/TabNavigator";
 import AddCustomerNavigator from "./navigation/AddCustomerNavigatjor";
+import AddOrderNavigator from "./navigation/AddOrderNavigator";
 
 // import { auth } from './firebase';
 // import { signInWithEmailAndPassword, signOut } from "firebase/auth";
@@ -48,6 +56,7 @@ import AddCustomerNavigator from "./navigation/AddCustomerNavigatjor";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
+import orderTypeScreen from "./screens/orderTypeScreen";
 
 const Stack = createStackNavigator();
 
@@ -93,12 +102,22 @@ export default function App() {
       <SafeAreaView style={{ flex: 1 }} edges={['top', 'left', 'right']}>
           <View style={styles.container}>
             {/* <AddCustomerNavigator /> */}
+            {/* <AddCustomerScreen /> */}
             {/* <AddCustomer /> */}
             {/* <Customers /> */}
             {/* <OrderDetails /> */}
+            {/* <AddOrderScreen /> */}
+            {/* <SelectCustomerScreen /> */}
+            {/* <OrderTypeScreen /> */}
+            {/* <OrderFormScreen /> */}
+            {/* <CameraScreen /> */}
 
 
-            <TabNavigator /> 
+
+            {/* <TabNavigator />  */}
+            {/* <HeaderScrenn /> */}
+            <AddOrderNavigator />    
+            
 
             {/* <NavigationContainer>
                   <Stack.Navigator initialRouteName="Login">

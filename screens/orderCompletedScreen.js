@@ -53,12 +53,18 @@ export default function orderCompletedScreen() {
 }
 
 const styles = StyleSheet.create({
+
+    container: {
+        flex: 1,
+        backgroundColor: 'white'
+    },
+
     arrow: {
         marginRight: 1.5*vh,
     },
 
     orders: {
-        height: "8%",
+        height: "18%",
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -88,12 +94,13 @@ const styles = StyleSheet.create({
     },
 
     total: {
-        height: "8%",
+        height: "14%",
         backgroundColor: '#FAFAFA',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: -14.5*vh
 
     },
 

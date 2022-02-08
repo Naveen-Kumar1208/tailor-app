@@ -11,15 +11,55 @@ const Stack = createStackNavigator();
 export default function DashboardNavigator(){
     return(
         <NavigationContainer independent={true}>
-            <Stack.Navigator initialRouteName="Orders" screenOptions={{headerShown:false}}>
+            <Stack.Navigator initialRouteName="Orders">
                 
-                <Stack.Screen name="Orders" component={Orders} />
-                <Stack.Screen name="Waiting" component={OrderDetails} />
-                <Stack.Screen name="Stitching" component={OrderDetails} />
-                <Stack.Screen name="Delayed" component={OrderDetails} />
-                <Stack.Screen name="Completed" component={OrderCompleted} />
+                <Stack.Screen name="Orders" component={Orders} options={{headerShown:false}}/>
+                <Stack.Screen name="Waiting" component={OrderDetails} 
+                    options={{
+                        title: 'WAITING',
+                        headerStyle: {
+                            backgroundColor: '#0062BD',
+                        },
+                        headerTintColor: '#fff',
+                    }}
+                />
+                <Stack.Screen name="Stitching" component={OrderDetails} 
+                    options={{
+                        title: 'STITCHING',
+                        headerStyle: {
+                            backgroundColor: '#0062BD',
+                        },
+                        headerTintColor: '#fff',
+                    }}
+                />
+                <Stack.Screen name="Delayed" component={OrderDetails} 
+                    options={{
+                        title: 'DELAYED',
+                        headerStyle: {
+                            backgroundColor: '#0062BD',
+                        },
+                        headerTintColor: '#fff',
+                    }}
+                />
+                <Stack.Screen name="Completed" component={OrderCompleted} 
+                    options={{
+                        title: 'COMPLETED',
+                        headerStyle: {
+                            backgroundColor: '#0062BD',
+                        },
+                        headerTintColor: '#fff',
+                    }}
+                />
                 {/* <Stack.Screen name="CompletedOn" component={CompletedDetails} /> */}
-                <Stack.Screen name="Cancelled" component={OrderDetails} />
+                <Stack.Screen name="Cancelled" component={OrderDetails} 
+                    options={{
+                        title: 'CANCELLED',
+                        headerStyle: {
+                            backgroundColor: '#0062BD',
+                        },
+                        headerTintColor: '#fff',
+                    }}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );

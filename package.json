@@ -13,6 +13,7 @@
   "dependencies": {
     "@expo-google-fonts/noto-sans": "^0.2.0",
     "@expo-google-fonts/pacifico": "^0.2.0",
+    "@react-native-community/datetimepicker": "4.0.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-firebase/app": "^14.2.2",
     "@react-navigation/core": "^6.1.0",
@@ -42,7 +43,8 @@
     "react-native-tab-view": "^3.1.1",
     "react-native-viewport-units": "^0.0.5",
     "react-native-web": "0.17.1",
-    "react-navigation": "^4.4.4"
+    "react-navigation": "^4.4.4",
+    "expo-camera": "~12.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

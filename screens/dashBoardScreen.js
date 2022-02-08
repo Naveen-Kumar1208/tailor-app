@@ -25,7 +25,7 @@ export default function dashBoardScreen({ navigation }) {
                     </View>
                     <View style={styles.details}>
                         <Text style={styles.text}>Tomorrow</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate("DeliveryByDay")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("DeliveryByTomorrow")}>
                                 <View style={styles.button}>
                                     <Text style={styles.values}>4</Text>
                                 </View>
