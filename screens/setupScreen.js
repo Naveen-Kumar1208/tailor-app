@@ -6,7 +6,7 @@ import Title from '../assets/svg/TailorMobileRow.svg';
 import Shop from '../assets/svg/shop.svg';
 import DropDown from '../assets/svg/dropArrow.svg';
 
-export default function setUpScreen() {
+export default function setUpScreen({ navigation }) {
   const [name, setName] = useState("");
 
   const changeHandler = (text) => {
@@ -15,10 +15,6 @@ export default function setUpScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Hamburger style={styles.hamburger}/>
-        <Title style={styles.title}/>
-      </View>
       <View style={styles.content}>
         <Shop />
         <Text style={styles.text}>SETUP YOUR SHOP</Text>
@@ -43,7 +39,7 @@ export default function setUpScreen() {
         </View>
       </View>
       <View style={styles.button}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Tab Navigator")}>
           <View style={styles.buttonStyle}>
               <Text style={styles.buttonText}>FINISH</Text>
           </View>

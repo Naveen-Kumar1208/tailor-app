@@ -5,17 +5,20 @@ import {vw, vh} from 'react-native-viewport-units';
 import Line from '../assets/svg/Line 20.svg';
 import Arrow from '../assets/svg/rightarrow.svg';
 
-export default function selectCustomerScreen({ navigation }) {
+export default function selectCustomerScreen({ route, navigation }) {
+
+    const { name, phone_no } = route.params;
+
   return (
     <View style={styles.container}>
       <View style={styles.order}>
             <View style={styles.orderId}>
                 <Text style={styles.orderIdText}>OID 3430</Text>
-            </View>
+            </View>                                                                       
             <View style={styles.content}>
                 <View style={styles.customerDetails}>
-                    <Text style={styles.customerName}>Ajitha</Text>
-                    <Text style={styles.customerNumber}>9876543210</Text>
+                    <Text style={styles.customerName}>{(name)}</Text>
+                    <Text style={styles.customerNumber}>{(phone_no)}</Text>
                 </View>
                 <View style={styles.orderDetails}>
                     <View style={styles.items}>

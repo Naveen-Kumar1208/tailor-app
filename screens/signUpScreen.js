@@ -3,53 +3,52 @@ import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'rea
 import Header from '../components/Header'
 import { Ionicons } from '@expo/vector-icons';
 
+import { db } from '../firebase';
 import { auth } from '../firebase';
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword} from "firebase/auth";
+import { doc, setDoc, collection, addDoc } from "firebase/firestore";
+
 import { useState, useEffect } from 'react';
 
-export default function signIn({ navigation }) {
+export default function signUpScreen({ navigation }) {
 
-    const [isSignedIn, setIsSignedIn] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const SignIn = () => {
-        signInWithEmailAndPassword(auth,email,password)
-        .then((result) => {
-          setIsSignedIn(true);
-          navigation.navigate("Tab Navigator");
-        })
-        .catch((err) => {
-          alert("Entered wrong username or password");
-        })
-    }
+    // const HandleReg = () => {
+    //     createUserWithEmailAndPassword(auth, email, password)
+    //     .then(registredUser => {
+    //         const {uid}= registredUser.user.uid
+    //         const SetData = async ()=>{
+    //             await setDoc(doc(db, "user", uid),{
+    //                 name:"test"
+    //             })  
+    //         }              
+    //     })
+    
+    // }
+
+    const HandleReg = async () => {
+        const { user } = await createUserWithEmailAndPassword(auth, email, password)
+        await setDoc(doc(db, "user", user.uid), { name:"test" }) 
+        navigation.navigate("SetUpScreen");
+      } 
 
     return (
             <View style={styles.container}>
                 <Header />
-                <Text style={styles.title}>SIGN IN</Text>
+                <Text style={styles.title}>CREATE AN ACCOUNT</Text>
                 <View style={{marginLeft: 70, width: "100%"}}>
                     <TextInput style={styles.input1} placeholder="email" value={email} onChangeText={text => setEmail(text)} />
                     <TextInput style={styles.input1} placeholder="password" value={password} onChangeText={text => setPassword(text)} />
                     {/* <Button title="sign in" onPress={SignIn} /> */}
                 </View>
                 <View style={styles.signInButton}>
-                    <TouchableOpacity  onPress={SignIn}>
+                    <TouchableOpacity  onPress={HandleReg}>
                             <View style={styles.signInButtonStyle}>
-                                <Text style={styles.SignInButtonText}>SIGN IN</Text>
+                                <Text style={styles.SignInButtonText}>REGISTER</Text>
                             </View>
                         </TouchableOpacity>
-                </View>
-
-                <View style={styles.signUp}>
-                    <Text style={styles.signUpText}>New User?</Text>
-                    <View style={styles.signUpButton}>
-                        <TouchableOpacity onPress={() => navigation.navigate("SIGN UP")}>
-                            <View style={styles.button}>
-                                <Text style={styles.buttonText}>SIGN UP / CREATE ACCOUNT</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
                 </View>
                 
             </View>

@@ -22,7 +22,7 @@ export default function addCustomerScreen({ navigation }) {
 
     const addData = async() => {
 
-        await setDoc(doc(db, "customer", "nrrtt "), {
+        await setDoc(doc(db, "customer", "bbbnn"), {
             name: name,
             phone_no: phoneNumber,
             is_deleted: false,

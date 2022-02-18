@@ -16,13 +16,14 @@ export default function Header() {
 const styles = StyleSheet.create({
     header: {
         height: 120,
-        paddingTop: 21,
+        // paddingTop: 21,
         backgroundColor: 'white',
-        marginTop: 40,
+        // marginTop: 40,
     },
 
     logo: {
-        marginLeft: 150,
+        // marginLeft: 150,
+        alignSelf: 'center',
         marginBottom: 40
     }
 

@@ -11,7 +11,7 @@ export default function orderTypeScreen({ navigation }) {
             <TextInput 
                 style={styles.textInput}
                 keyboardType='default'
-                placeholder='Search Customer...'
+                placeholder='Search....'
                 maxLength={20}
             />
         </View>

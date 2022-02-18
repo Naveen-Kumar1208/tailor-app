@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import React from 'react';
+import { useState, useEffect } from 'react'
 // import DatePicker from 'react-native-datepicker';
 
 import {vw, vh} from 'react-native-viewport-units';
@@ -8,7 +9,55 @@ import Line from '../assets/svg/Line 20.svg';
 import Line1 from '../assets/svg/Line 12.svg';
 import Camera from '../assets/svg/camera.svg';
 
+import { db } from '../firebase';
+import { getFirestore, collection, getDocs, setDoc, doc, serverTimestamp } from "firebase/firestore";
+
 export default function orderFormScreen({ navigation }) {
+
+    const [measurement, setMeasurement] = useState('');
+    const [itemType, setItemType] = useState('');
+    const [instructions, setInstructions] = useState('');
+    const [image, setImage] = useState('');
+    const [deliveryDate, setDeliveryDate] = useState(null);
+    const [price, setPrice] = useState(null);
+
+    const changeTypeHandler = (type) => {
+        setItemType(type);
+        
+    } 
+
+    const changeInstructionsHandler = (ins) => {
+        setInstructions(ins);
+        
+    }
+
+    const changeMeasurementHandler = (mes) => {
+        setMeasurement(mes);
+        
+    }
+
+
+
+    const changeNumberHandler = (num) => {
+        setPrice(num);
+        
+    }
+
+    const addData = async() => {
+
+        await setDoc(doc(db, "Orders", "rttt"), {
+            order_id: 10,
+            order_tytpe: itemType,
+            measurements: measurement,
+            instructions: instructions,
+            image: "url",
+            delivery_date: serverTimestamp(),
+            price: price,
+            is_deleted: false,
+            created_date: serverTimestamp()
+        });
+    }
+
   return (
     <View style={styles.container}>
         <ScrollView>
@@ -43,9 +92,10 @@ export default function orderFormScreen({ navigation }) {
                         <TextInput 
                             style={styles.typeInput}
                             keyboardType='default'
-                            maxLength={10}
-                            // onChangeText={changeNumberHandler}
-                            value={"Blouse"}
+                            // maxLength={10}
+                            // multiline={true}
+                            onChangeText={changeTypeHandler}
+                            value={itemType}
                         /> 
                     </View>
                     <View style={{paddingTop: 3*vh}}>
@@ -61,7 +111,10 @@ export default function orderFormScreen({ navigation }) {
                         <Text style={styles.title}>Measurements</Text>
                         <TextInput 
                             style={styles.measurementInput}
+                            keyboardType='default'
                             multiline={true}
+                            onChangeText={changeMeasurementHandler}
+                            value={measurement}
                         /> 
                     </View>
 
@@ -69,12 +122,15 @@ export default function orderFormScreen({ navigation }) {
                         <Text style={styles.title}>Special Notes / Instructions</Text>
                         <TextInput 
                             style={styles.notesInput}
+                            keyboardType='default'
                             multiline={true}
+                            onChangeText={changeInstructionsHandler}
+                            value={instructions}
                         /> 
                     </View>
 
-                    <View style={{paddingTop: 3*vh}}>
-                        <Text style={styles.title}>Delivery on</Text>
+                    {/* <View style={{paddingTop: 3*vh}}>
+                        <Text style={styles.title}>Delivery on</Text> */}
                         {/* <DatePicker
                             style={styles.datePickerStyle}
                             // date={date}
@@ -107,20 +163,27 @@ export default function orderFormScreen({ navigation }) {
                                 }
                             }}
                         /> */}
-                    </View>
+                    {/* </View> */}
 
                     <View style={{paddingTop: 3*vh}}>
                         <Text style={styles.title}>Stitching Cost</Text>
                         <TextInput 
                             style={styles.typeInput}
-                            keyboardType='default'
+                            keyboardType='numeric'
                             placeholder='Tap to enter cost...'
                             maxLength={10}
-                            // onChangeText={changeNumberHandler}
-                            // value={"Blouse"}
+                            onChangeText={changeNumberHandler}
+                            value={price}
                         /> 
                     </View>
                     
+                </View>
+                <View style={styles.button}>
+                    <TouchableOpacity onPress={addData}>
+                            <View style={styles.buttonStyle}>
+                                <Text style={styles.buttonText}>Submit</Text>
+                            </View>
+                    </TouchableOpacity>
                 </View>
                 <Line1 />
             </View>
@@ -198,7 +261,7 @@ const styles = StyleSheet.create({
     typeInput: {
         borderBottomWidth: 2,
         borderColor: '#0062BD',
-        width: "90%",
+        width: "80%",
     },
 
     title: {
@@ -216,7 +279,7 @@ const styles = StyleSheet.create({
     },
 
     input: {
-        marginLeft: 7.5*vh,
+        marginLeft: 6*vh,
         marginTop: -4*vh,
         marginBottom: 5*vh
     },
@@ -236,7 +299,7 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         borderWidth: 1,
         borderColor: '#0062BD',
-        width: 44*vh,
+        width: "80%",
         height: 27.5*vh,
     },
 
@@ -244,12 +307,34 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         borderWidth: 1,
         borderColor: '#0062BD',
-        width: 44*vh,
+        width: "80%",
         height: 15*vh,
     },
 
     datePickerStyle: {
         width: 230,
+    },
+
+    button: {
+        margin: 70,
+        marginTop: 10,
+        paddingLeft: 2,
+    },
+
+    buttonStyle: {
+        borderRadius: 2,
+        paddingVertical: 14,
+        paddingHorizontal: 10,
+        backgroundColor: '#0062BD',
+        width: 255
+    },
+
+    buttonText: {
+        color: 'white',
+        fontFamily: 'NotoSans_400Regular',
+        fontSize: 16,
+        lineHeight: 24,
+        textAlign: 'center'
     },
 
 });

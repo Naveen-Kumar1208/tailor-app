@@ -1,10 +1,10 @@
 {
-  "webpackServerPort": null,
-  "devToolsPort": 19002,
-  "expoServerPort": null,
+  "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://jr-uzb.anonymous.tailor.exp.direct",
+  "packagerNgrokUrl": "https://packager.jr-uzb.anonymous.tailor.exp.direct",
+  "ngrokPid": 14824,
+  "webpackServerPort": null,
+  "devToolsPort": 19002
 }

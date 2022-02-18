@@ -38,6 +38,8 @@ export default function orderDetailsScreen() {
         })()
     }, []);
 
+    
+
     console.log(waitingOrder);
 
   return (

@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import HeaderScreen from '../screens/headerScreen';
+import HeaderScreen from '../screens/HeaderScreen';
 import AddOrderScreen from '../screens/addOrderScreen';
 import SelectCustomerScreen from '../screens/selectCustomerScreen';
 import OrderTypeScreen from '../screens/orderTypeScreen';
@@ -15,8 +15,8 @@ const Stack = createStackNavigator();
 export default function AddOrderNavigator(){
   return (
     <NavigationContainer independent={true}>
-        <Stack.Navigator initialRouteName="HeaderScreen">
-            <Stack.Screen name="HeaderScreen" component={HeaderScreen} options={{headerShown:false}}/>
+        <Stack.Navigator initialRouteName="Add Order">
+            {/* <Stack.Screen name="HeaderScreen" component={HeaderScreen} options={{headerShown:false}}/> */}
             <Stack.Screen name="Add Order" component={AddOrderScreen} 
               options={{
                 title: 'New Order',

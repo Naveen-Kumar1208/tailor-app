@@ -59,7 +59,7 @@ export default function dashBoardScreen({ navigation }) {
                         <Text style={styles.values}>3</Text>
                     </View>
                 </View>
-            
+                
                 <View style={styles.totalValues}>
                     <View style={styles.contentValues}>
                         <View style={styles.details}>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 
     deliverContent: {
         marginTop: 1.4*vh,
-        marginBottom: 2.5*vh
+        marginBottom: 2.5*vh,
     },
 
     orderContent: {
@@ -99,12 +99,12 @@ const styles = StyleSheet.create({
     },
 
     totalValues: {
-        marginTop: 20,
-        marginBottom: 20
+        marginTop: 2.5*vh,
+        marginBottom: 2.5*vh
     },
 
     title: {
-        marginLeft: 20,
+        marginLeft: 2.5*vh,
         fontFamily: 'NotoSans_400Regular',
         fontSize: 3*vh
     },

@@ -23,30 +23,30 @@ export default function Login({ navigation }) {
     }
 
   return (
-    <View style={styles.container}>
-        <Text style={styles.text}>LogIn</Text>
-        <TextInput style={styles.input} placeholder="email" value={email} onChangeText={text => setEmail(text)} />
-        <TextInput style={styles.input} placeholder="password" value={password} onChangeText={text => setPassword(text)} />
+    <View style={styles.logIn}>
+        <Text style={styles.text1}>LogIn</Text>
+        <TextInput style={styles.input1} placeholder="email" value={email} onChangeText={text => setEmail(text)} />
+        <TextInput style={styles.input1} placeholder="password" value={password} onChangeText={text => setPassword(text)} />
         <Button title="sign in" onPress={SignIn} />      
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    logIn: {
         flex: 1,
         padding: 30,
         marginTop: 10
     },
 
-    input: {
+    input1: {
         backgroundColor: 'white',
         height: 50,
         width: 330,
         marginBottom: 10
     },
 
-    text: {
+    text1: {
       fontFamily: 'NotoSans_700Bold',
       fontSize: 45,
       color: '#0062BD',

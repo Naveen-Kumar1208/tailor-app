@@ -18,13 +18,14 @@ import OrderCompleted from "./screens/orderCompletedScreen";
 import CustomerDetails from "./screens/customerDetailsScreen";
 import AddCustomer from "./screens/addCustomerScreen";
 import Login from './screens/Login';
-import HeaderScrenn from './screens/headerScreen';
+import HeaderScreen from './screens/HeaderScreen';
 import AddCustomerScreen from "./screens/addCustomerScreen";
 import AddOrderScreen from "./screens/addOrderScreen";
 import SelectCustomerScreen from "./screens/selectCustomerScreen";
 import OrderTypeScreen from "./screens/orderTypeScreen";
 import OrderFormScreen from "./screens/orderFormScreen";
 import CameraScreen from "./screens/cameraScreen";
+import SignUpScreen from "./screens/signUpScreen";
 
 
 import { useFonts, Pacifico_400Regular } from "@expo-google-fonts/pacifico";
@@ -46,6 +47,7 @@ import DetailsNavigator from "./navigation/detailsNavigation/DashboardNavigator"
 import TabNavigator from "./navigation/TabNavigator";
 import AddCustomerNavigator from "./navigation/AddCustomerNavigatjor";
 import AddOrderNavigator from "./navigation/AddOrderNavigator";
+import SignUpNavigator from "./navigation/SignUpNavigator";
 
 // import { auth } from './firebase';
 // import { signInWithEmailAndPassword, signOut } from "firebase/auth";
@@ -57,6 +59,11 @@ import AddOrderNavigator from "./navigation/AddOrderNavigator";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import orderTypeScreen from "./screens/orderTypeScreen";
+// import AddOrderScreen from "./screens/addCustomerScreen";
+
+import { LogBox } from "react-native"
+
+LogBox.ignoreAllLogs(true);
 
 const Stack = createStackNavigator();
 
@@ -111,20 +118,46 @@ export default function App() {
             {/* <OrderTypeScreen /> */}
             {/* <OrderFormScreen /> */}
             {/* <CameraScreen /> */}
-
+            {/* <SignUpScreen /> */}
 
 
             {/* <TabNavigator />  */}
             {/* <HeaderScrenn /> */}
-            <AddOrderNavigator />    
+            {/* <AddOrderNavigator />     */}
+            {/* <SignUpNavigator /> */}
             
 
-            {/* <NavigationContainer>
-                  <Stack.Navigator initialRouteName="Login">
-                    <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
-                    <Stack.Screen name="Tab Navigator" component={TabNavigator} options={{headerShown:false}}/>
-                  </Stack.Navigator>
-            </NavigationContainer> */}
+              <NavigationContainer>
+                    <Stack.Navigator initialRouteName="Login">
+                      <Stack.Screen name="SignIn" component={SignIn} options={{headerShown:false}} />
+                      <Stack.Screen name="SIGN UP" component={SignUpNavigator} options={{headerShown:false}} />
+                      <Stack.Screen name="Tab Navigator" component={TabNavigator} 
+                        options={({navigation}) => ({
+                          headerTitle: "Home",
+                          // headerTitleContainerStyle: {marginLeft: 20},
+                          headerRight: () => (
+                            <View style={{marginRight: 24}}>
+                              <Add  onPress={() => navigation.navigate("AddOrderNavigator")}/>
+                            </View>
+                          ),
+                          headerLeft: () => (
+                            <View>
+                              <Menu style={{marginLeft: 16}}/>
+                            </View>
+                          ),
+                          headerStyle: {
+                            backgroundColor: '#0062BD',
+                        //Set Header color
+                          },
+                          headerTintColor: '#fff', //Set Header text color
+                          headerTitleStyle: {
+                            fontWeight: 'bold', //Set Header text style
+                          },
+                      })} 
+                      />
+                      <Stack.Screen name="AddOrderNavigator" component={AddOrderNavigator} options={{headerShown:false}}/>
+                    </Stack.Navigator>
+              </NavigationContainer>
             {/* <SuccessScreen /> */}
             {/* <SetUpScreen /> */}
             {/* <SettingUpScreen /> */}

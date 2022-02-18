@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from "react-nati
 import DashBoard from '../screens/dashBoardScreen';
 import Orders from '../screens/ordersScreen';
 import Customers from '../screens/customerScreen';
-import Header from "../screens/headerScreen";
+import Header from "../screens/HeaderScreen";
 
 
 import DashboardNavigator from './detailsNavigation/DashboardNavigator';
@@ -25,7 +25,7 @@ import OrderUnfocused from '../assets/svg/order_unfocused.svg';
 import Customer from '../assets/svg/customer.svg';
 import CustomerUnfocused from '../assets/svg/customer_unfocused.svg';
 
-import HeaderScreen from '../screens/headerScreen';
+import HeaderScreen from '../screens/HeaderScreen';
 // import Customer from '../screens/customerScreen';
 
 import {vw, vh} from 'react-native-viewport-units';
@@ -42,7 +42,9 @@ export default function TabNavigator(){
         <>
             {/* <HeaderScreen /> */}
             <NavigationContainer independent={true}>
-                <Tab.Navigator initialRouteName="DashBoard" tabBarOptions={{activeTintColor: "#ffffff", labelStyle: { fontSize: 3.7*vw }, style: { backgroundColor: "#0062BD"}}}
+                <Tab.Navigator 
+                  initialRouteName="DashBoard"
+                   tabBarOptions={{activeTintColor: "#ffffff", labelStyle: { fontSize: 3.7*vw }, style: { backgroundColor: "#0062BD"}}}
                     screenOptions={({ route }) => ({
                         tabBarIcon: ({ focused }) => {
                           if (route.name === 'DashBoard') {
