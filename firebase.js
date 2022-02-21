@@ -86,3 +86,11 @@ getDocs(colRef)
     //         setCancelledOrder(cancelledOrderList);
     //     })()
     // }, []);
+
+
+    // "ldpi": "./assets/splash/ldpi.png",
+    // "mdpi": "./assets/splash/mdpi.png",
+    // "hdpi": "./assets/splash/hdpi.png",
+    // "xhdpi": "./assets/splash/xhdpi.png",
+    // "xxhdpi": "./assets/splash/xxhdpi.png",
+    // "xxxhdpi": "./assets/splash/xxxhdpi.png", 

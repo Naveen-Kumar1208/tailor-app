@@ -3,6 +3,8 @@ import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'rea
 import Header from '../components/Header'
 import { Ionicons } from '@expo/vector-icons';
 
+import {vw, vh} from 'react-native-viewport-units';
+
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useState, useEffect } from 'react';
@@ -74,33 +76,33 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     },
 
-    input: {
-        paddingTop: 40,
-        display: 'flex',
-        flexDirection: 'row',
-    },
+    // input: {
+    //     paddingTop: 40,
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    // },
 
-    code: {
-        marginLeft: 25,
-        fontSize: 18
-    },
+    // code: {
+    //     marginLeft: 25,
+    //     fontSize: 18
+    // },
 
-    textInput: {
-        borderBottomWidth: 2,
-        borderColor: '#0062BD',
-        width: 250,
-        marginLeft: 20
-    },
+    // textInput: {
+    //     borderBottomWidth: 2,
+    //     borderColor: '#0062BD',
+    //     width: 250,
+    //     marginLeft: 20
+    // },
 
-    icon: {
-        position: 'absolute',
-        right: 65,
-        bottom: 5
-    },
+    // icon: {
+    //     position: 'absolute',
+    //     right: 65,
+    //     bottom: 5
+    // },
     signInButton: {
-        margin: 70,
-        marginTop: 50,
-        paddingLeft: 2
+        // margin: 70,
+        marginLeft: 70,
+        marginTop: 6.2*vh,
     },
 
     signInButtonStyle: {
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
         paddingVertical: 14,
         paddingHorizontal: 10,
         backgroundColor: '#0062BD',
-        width: 255
+        width: "80%"
     },
 
     SignInButtonText: {
@@ -143,14 +145,16 @@ const styles = StyleSheet.create({
         borderColor: '#0062BD',
         paddingVertical: 14,
         paddingHorizontal: 10,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        width: "100%"
     },
 
     buttonText: {
         color: '#0062BD',
         fontFamily: 'NotoSans_400Regular',
-        fontSize: 16,
-        lineHeight: 24
+        fontSize: 13,
+        alignSelf: 'center'
+        // lineHeight: 24
     },
 
     input1: {

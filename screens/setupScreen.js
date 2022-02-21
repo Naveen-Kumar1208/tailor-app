@@ -52,7 +52,6 @@ export default function setUpScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 70,
     marginLeft: 25
   },
 
@@ -78,14 +77,14 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    marginLeft: 70,
+    marginLeft: 50,
     paddingTop: 30
   },
 
   name: {
     borderBottomWidth: 2,
     borderColor: '#0062BD',
-    width: 250,
+    width: "80%",
     paddingBottom: 5
   },
 
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
   country: {
     borderBottomWidth: 2,
     borderColor: '#0062BD',
-    width: 250,
+    width: "80%",
     paddingBottom: 5
   },
 
@@ -108,7 +107,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    margin: 70,
+    marginLeft: 50,
     marginTop: 50,
 },
 
@@ -117,7 +116,7 @@ buttonStyle: {
     paddingVertical: 14,
     paddingHorizontal: 10,
     backgroundColor: '#0062BD',
-    width: 255
+    width: "80%"
 },
 
 buttonText: {

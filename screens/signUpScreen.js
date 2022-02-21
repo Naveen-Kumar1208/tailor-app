@@ -3,6 +3,8 @@ import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'rea
 import Header from '../components/Header'
 import { Ionicons } from '@expo/vector-icons';
 
+import {vw, vh} from 'react-native-viewport-units';
+
 import { db } from '../firebase';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword} from "firebase/auth";
@@ -36,7 +38,7 @@ export default function signUpScreen({ navigation }) {
 
     return (
             <View style={styles.container}>
-                <Header />
+                {/* <Header /> */}
                 <Text style={styles.title}>CREATE AN ACCOUNT</Text>
                 <View style={{marginLeft: 70, width: "100%"}}>
                     <TextInput style={styles.input1} placeholder="email" value={email} onChangeText={text => setEmail(text)} />
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
     textInput: {
         borderBottomWidth: 2,
         borderColor: '#0062BD',
-        width: 250,
+        width: "80%",
         marginLeft: 20
     },
 
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
         paddingVertical: 14,
         paddingHorizontal: 10,
         backgroundColor: '#0062BD',
-        width: 255
+        width: "100%"
     },
 
     SignInButtonText: {
@@ -154,8 +156,8 @@ const styles = StyleSheet.create({
 
     input1: {
         backgroundColor: 'white',
-        height: 50,
-        width: "65%",
+        height: 8*vh,
+        width: "60%",
         marginBottom: 10,
         borderBottomColor: '#0062BD',
         borderBottomWidth: 2

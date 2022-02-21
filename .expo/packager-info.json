@@ -2,9 +2,9 @@
   "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://jr-uzb.anonymous.tailor.exp.direct",
-  "packagerNgrokUrl": "https://packager.jr-uzb.anonymous.tailor.exp.direct",
-  "ngrokPid": 14824,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null,
   "devToolsPort": 19002
 }
