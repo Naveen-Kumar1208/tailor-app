@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "gamezone",
-    "slug": "gamezone",
+    "name": "Tailor Mobile",
+    "slug": "tailor_mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/app-icons/mdpi.png",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash/mdpi.png",
@@ -21,6 +21,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.vprana.tailormobileapp",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/app-icons/mdpi.png",
         "backgroundColor": "#FFFFFF"

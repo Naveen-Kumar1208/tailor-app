@@ -45,7 +45,7 @@ export default function orderFormScreen({ navigation }) {
 
     const addData = async() => {
 
-        await setDoc(doc(db, "Orders", "rttt"), {
+        await setDoc(doc(db, "Orders", "nuugg"), {
             order_id: 10,
             order_tytpe: itemType,
             measurements: measurement,

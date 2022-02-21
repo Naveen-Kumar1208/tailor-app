@@ -34,7 +34,7 @@ export default function signUpScreen({ navigation }) {
         const { user } = await createUserWithEmailAndPassword(auth, email, password)
         await setDoc(doc(db, "user", user.uid), { name:"test" }) 
         navigation.navigate("SetUpScreen");
-      } 
+    } 
 
     return (
             <View style={styles.container}>

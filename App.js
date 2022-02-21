@@ -127,7 +127,7 @@ export default function App() {
             {/* <SignUpNavigator /> */}
             
 
-              {/* <NavigationContainer>
+              <NavigationContainer>
                     <Stack.Navigator initialRouteName="Login">
                       <Stack.Screen name="SignIn" component={SignIn} options={{headerShown:false}} />
                       <Stack.Screen name="SIGN UP" component={SignUpNavigator} options={{headerShown:false}} />
@@ -157,9 +157,9 @@ export default function App() {
                       />
                       <Stack.Screen name="AddOrderNavigator" component={AddOrderNavigator} options={{headerShown:false}}/>
                     </Stack.Navigator>
-              </NavigationContainer> */}
+              </NavigationContainer>
             {/* <SuccessScreen /> */}
-            <SetUpScreen />
+            {/* <SetUpScreen /> */}
             {/* <SettingUpScreen /> */}
           </View>
       </SafeAreaView>

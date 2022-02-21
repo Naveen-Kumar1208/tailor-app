@@ -21,14 +21,24 @@ export default function addCustomerScreen({ navigation }) {
     }
 
     const addData = async() => {
-
-        await setDoc(doc(db, "customer", "bbbnn"), {
+        await setDoc(doc(db, "customer", "fdgfgd"), {
             name: name,
             phone_no: phoneNumber,
             is_deleted: false,
-            created_date: serverTimestamp()
+            created_date: serverTimestamp(),
         });
+        alert("Customer created successfully");
     }
+
+    // const addData = async () => {
+    //     const { customer } = await setDoc(doc(db, "customer", customer.uid), {
+    //         name: name,
+    //         phone_no: phoneNumber,
+    //         is_deleted: false,
+    //         created_date: serverTimestamp(),
+    //     });
+    //     // await setDoc(doc(db, "user", user.uid), { name:"test" }) 
+    // } 
 
   return (
     <View style={styles.container}>
