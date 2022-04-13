@@ -32,7 +32,7 @@ export default function dashBoardScreen({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.details}>
-                        <Text style={styles.text} style={{marginTop: -1.4*vh}}>Rest of this {'\n'} Month</Text>
+                        <Text style={styles.text}>Rest of this {'\n'} Month</Text>
                         <TouchableOpacity onPress={() => navigation.navigate("DeliveryByMonth")}>
                                 <View style={styles.button}>
                                     <Text style={styles.values}>22</Text>

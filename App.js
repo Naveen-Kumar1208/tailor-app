@@ -1,31 +1,31 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import SignIn from "./screens/signIn";
-import SignUp from "./screens/signUp";
-import OtpVerify from "./screens/otpVerify";
+import SignIn from "./screens/SignIn";
+import SignUp from "./screens/SignUp";
+import OtpVerify from "./screens/OtpVerify";
 import AppLoading from "expo-app-loading";
-import SuccessScreen from "./screens/successScreen";
-import SetUpScreen from "./screens/setupScreen";
-import SettingUpScreen from "./screens/settingUpScreen";
-import DashBoard from "./screens/dashBoardScreen";
-import Orders from "./screens/ordersScreen";
-import Customers from "./screens/customerScreen";
-import DeliveyByDay from "./screens/deliveryByDayScreen";
-import DeliveyByMonth from "./screens/deliveryByMonthScreen";
-import OrderDetails from "./screens/orderDetailsScreen";
-import OrderCompleted from "./screens/orderCompletedScreen";
-import CustomerDetails from "./screens/customerDetailsScreen";
-import AddCustomer from "./screens/addCustomerScreen";
+import SuccessScreen from "./screens/SuccessScreen";
+import SetUpScreen from "./screens/SetupScreen";
+import SettingUpScreen from "./screens/SettingUpScreen";
+import DashBoard from "./screens/DashBoardScreen";
+import Orders from "./screens/OrdersScreen";
+import Customers from "./screens/CustomerScreen";
+import DeliveyByDay from "./screens/DeliveryByDayScreen";
+import DeliveyByMonth from "./screens/DeliveryByMonthScreen";
+import OrderDetails from "./screens/OrderDetailsScreen";
+import OrderCompleted from "./screens/OrderCompletedScreen";
+import CustomerDetails from "./screens/CustomerDetailsScreen";
+import AddCustomer from "./screens/AddCustomerScreen";
 import Login from './screens/Login';
 import HeaderScreen from './screens/HeaderScreen';
-import AddCustomerScreen from "./screens/addCustomerScreen";
-import AddOrderScreen from "./screens/addOrderScreen";
-import SelectCustomerScreen from "./screens/selectCustomerScreen";
-import OrderTypeScreen from "./screens/orderTypeScreen";
-import OrderFormScreen from "./screens/orderFormScreen";
-import CameraScreen from "./screens/cameraScreen";
-import SignUpScreen from "./screens/signUpScreen";
+import AddCustomerScreen from "./screens/AddCustomerScreen";
+import AddOrderScreen from "./screens/AddOrderScreen";
+import SelectCustomerScreen from "./screens/SelectCustomerScreen";
+import OrderTypeScreen from "./screens/OrderTypeScreen";
+import OrderFormScreen from "./screens/OrderFormScreen";
+import CameraScreen from "./screens/CameraScreen";
+import SignUpScreen from "./screens/SignUpScreen";
 
 
 import { useFonts, Pacifico_400Regular } from "@expo-google-fonts/pacifico";
@@ -58,7 +58,7 @@ import SignUpNavigator from "./navigation/SignUpNavigator";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import orderTypeScreen from "./screens/orderTypeScreen";
+import orderTypeScreen from "./screens/OrderTypeScreen";
 // import AddOrderScreen from "./screens/addCustomerScreen";
 
 import { LogBox } from "react-native"

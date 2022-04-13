@@ -1,9 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-import DashBoard from "../../screens/dashBoardScreen";
-import DeliveryByDay from "../../screens/deliveryByDayScreen";
-import DeliveryByMonth from "../../screens/deliveryByMonthScreen";
+import DashBoard from "../../screens/DashBoardScreen";
+import DeliveryByDay from "../../screens/DeliveryByDayScreen";
+import DeliveryByMonth from "../../screens/DeliveryByMonthScreen";
 
 const Stack = createStackNavigator();
 

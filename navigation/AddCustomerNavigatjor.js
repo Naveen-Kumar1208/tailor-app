@@ -1,14 +1,14 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-import AddCustomer from '../screens/addCustomerScreen';
-import Customers from '../screens/customerScreen';
-import CustomerDetails from '../screens/customerDetailsScreen';
+import AddCustomer from '../screens/AddCustomerScreen';
+import Customers from '../screens/CustomerScreen';
+import CustomerDetails from '../screens/CustomerDetailsScreen';
 
-import DashBoard from "../screens/dashBoardScreen";
-import DeliveryByDay from "../screens/deliveryByDayScreen";
-import DeliveryByMonth from "../screens/deliveryByMonthScreen";
-import AddOrderScreen from "../screens/addOrderScreen";
+import DashBoard from "../screens/DashBoardScreen";
+import DeliveryByDay from "../screens/DeliveryByDayScreen";
+import DeliveryByMonth from "../screens/DeliveryByMonthScreen";
+import AddOrderScreen from "../screens/AddOrderScreen";
 
 import TabNavigator from './TabNavigator';
 import AddOrderNavigator from './AddOrderNavigator';

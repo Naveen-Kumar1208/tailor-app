@@ -4,8 +4,8 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import SignUpScreen from '../screens/signUpScreen';
-import SetUpScreen from '../screens/setupScreen';
+import SignUpScreen from '../screens/SignUpScreen';
+import SetUpScreen from '../screens/SetupScreen';
 import TabNavigator from './TabNavigator';
 import AddOrderNavigator from './AddOrderNavigator';
 

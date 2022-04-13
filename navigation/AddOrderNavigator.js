@@ -2,12 +2,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 import HeaderScreen from '../screens/HeaderScreen';
-import AddOrderScreen from '../screens/addOrderScreen';
-import SelectCustomerScreen from '../screens/selectCustomerScreen';
-import OrderTypeScreen from '../screens/orderTypeScreen';
-import OrderFormScreen from '../screens/orderFormScreen';
-import AddCustomerScreen from '../screens/addCustomerScreen';
-import CameraScreen from '../screens/cameraScreen';
+import AddOrderScreen from '../screens/AddOrderScreen';
+import SelectCustomerScreen from '../screens/SelectCustomerScreen';
+import OrderTypeScreen from '../screens/OrderTypeScreen';
+import OrderFormScreen from '../screens/OrderFormScreen';
+import AddCustomerScreen from '../screens/AddCustomerScreen';
+import CameraScreen from '../screens/CameraScreen';
 
 
 const Stack = createStackNavigator();

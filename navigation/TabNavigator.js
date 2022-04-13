@@ -3,9 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from "react-native";
 
-import DashBoard from '../screens/dashBoardScreen';
-import Orders from '../screens/ordersScreen';
-import Customers from '../screens/customerScreen';
+import DashBoard from '../screens/DashBoardScreen';
+import Orders from '../screens/OrdersScreen';
+import Customers from '../screens/CustomerScreen';
 import Header from "../screens/HeaderScreen";
 
 

@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
 
 
 
-{/* <View style={styles.input}>
+{/*             <View style={styles.input}>
                     <Text style={styles.code}>+91</Text>
                     <TextInput 
                         style={styles.textInput}
@@ -179,4 +179,6 @@ const styles = StyleSheet.create({
                         maxLength={10}
                     />
                     <Ionicons name="phone-portrait-outline" style={styles.icon} size={24} color="black" />
-                </View> */}
+                </View> 
+            
+            */}

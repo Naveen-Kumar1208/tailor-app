@@ -6,6 +6,8 @@ import Autocomplete from 'react-native-autocomplete-input';
 
 import {vw, vh} from 'react-native-viewport-units';
 
+
+
 import { db } from '../firebase';
 import { getFirestore, collection, getDocs, setDoc, doc, serverTimestamp } from "firebase/firestore";
 

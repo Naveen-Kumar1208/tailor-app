@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
 import Border from '../../assets/svg/Line 1.svg';
 import Loading from '../../assets/svg/load.svg';
-import signUp from '../../screens/signUp';
+import signUp from '../../screens/SignUp';
 
 export default function SendingOtp(props) {
     const {number} = props;
